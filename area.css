@@ -1,0 +1,94 @@
+/* ══════════════════════════════════════════
+   SKILLIU — area.css (páginas de auth + área de membro)
+   Reaproveita as variáveis de cor/fonte já definidas em style.css
+   ══════════════════════════════════════════ */
+
+body.pagina-auth{
+  min-height:100vh;background:var(--off);
+  display:flex;align-items:center;justify-content:center;padding:2rem 1.2rem;
+}
+.auth-logo-link{position:fixed;top:1.6rem;left:1.8rem;text-decoration:none;z-index:5;}
+.auth-shell{width:100%;display:flex;justify-content:center;}
+.form-erro-global{background:var(--red-bg,#fdeceb);color:#c0392b;font-size:.83rem;font-weight:700;padding:.7rem .9rem;border-radius:10px;margin-bottom:1.1rem;}
+
+/* ── Área de membro (dashboard) ── */
+body.pagina-area{background:var(--off);min-height:100vh;}
+body.area-auth-pendente .area-shell{display:none;}
+.area-loading{display:none;position:fixed;inset:0;z-index:500;background:var(--b1);align-items:center;justify-content:center;color:#fff;}
+body.area-auth-pendente .area-loading{display:flex;}
+
+.area-topbar{
+  display:flex;align-items:center;justify-content:space-between;padding:1rem 1.8rem;
+  background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;
+}
+.area-user{display:flex;align-items:center;gap:.7rem;}
+.area-avatar{width:38px;height:38px;border-radius:50%;background:var(--b2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;object-fit:cover;}
+.area-sair{border:none;background:none;color:var(--b3);font-weight:700;font-size:.85rem;cursor:pointer;}
+
+.area-container{max-width:960px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+.area-tabs{display:flex;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:100px;padding:.35rem;width:fit-content;margin:0 auto 1.8rem;}
+.area-tab{border:none;background:none;padding:.6rem 1.3rem;border-radius:100px;font-weight:800;font-size:.85rem;color:var(--b3);cursor:pointer;}
+.area-tab.active{background:var(--g1);color:#fff;}
+
+.area-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.8rem;box-shadow:0 6px 30px var(--shadow);margin-bottom:1.4rem;}
+
+/* Perfil */
+.perfil-foto-linha{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.4rem;}
+.perfil-foto-preview{width:78px;height:78px;border-radius:50%;background:var(--b2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.3rem;object-fit:cover;flex-shrink:0;}
+.btn-trocar-foto{border:1.5px solid var(--border);background:var(--off);color:var(--b1);font-weight:700;font-size:.8rem;padding:.5rem 1rem;border-radius:100px;cursor:pointer;}
+
+/* Ebooks */
+.ebooks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.1rem;}
+.ebook-card{border:1px solid var(--border);border-radius:16px;padding:1.2rem;text-align:center;}
+.ebook-card i{font-size:1.8rem;color:var(--g1);margin-bottom:.7rem;display:block;}
+.ebook-card h4{font-size:.95rem;margin-bottom:.3rem;color:var(--b1);}
+.ebook-card p{font-size:.78rem;color:var(--b3);margin-bottom:.9rem;min-height:2.2em;}
+
+/* Comunidade / chat */
+.chat-shell{display:flex;height:70vh;min-height:420px;background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 6px 30px var(--shadow);}
+.chat-lista{width:280px;flex-shrink:0;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto;}
+.chat-lista-topo{padding:1rem 1rem .6rem;display:flex;gap:.5rem;}
+.chat-lista-topo button{flex:1;border:none;background:var(--off);color:var(--b1);font-size:.72rem;font-weight:800;padding:.5rem;border-radius:10px;cursor:pointer;}
+.chat-item{display:flex;align-items:center;gap:.6rem;padding:.7rem 1rem;cursor:pointer;border-bottom:1px solid var(--border);}
+.chat-item:hover, .chat-item.ativo{background:var(--off);}
+.chat-item-avatar{width:34px;height:34px;border-radius:50%;background:var(--b2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.75rem;flex-shrink:0;object-fit:cover;}
+.chat-item-nome{font-size:.85rem;font-weight:800;color:var(--b1);}
+.chat-item-sub{font-size:.7rem;color:var(--b3);}
+.chat-pedido{display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-bottom:1px solid var(--border);font-size:.78rem;}
+.chat-pedido button{border:none;border-radius:8px;padding:.3rem .5rem;font-size:.72rem;font-weight:800;cursor:pointer;}
+.chat-pedido .aceitar{background:var(--g1);color:#fff;}
+.chat-pedido .recusar{background:#fdeceb;color:#c0392b;}
+
+.chat-painel{flex:1;display:flex;flex-direction:column;min-width:0;}
+.chat-cabecalho{padding:.9rem 1.2rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--b1);display:flex;align-items:center;gap:.6rem;}
+.chat-voltar{display:none;border:none;background:none;color:var(--b1);font-size:1rem;cursor:pointer;}
+.chat-mensagens{flex:1;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:.6rem;}
+.msg-bolha{max-width:72%;padding:.6rem .9rem;border-radius:14px;font-size:.85rem;line-height:1.4;}
+.msg-outro{align-self:flex-start;background:var(--off);color:var(--b1);border-bottom-left-radius:4px;}
+.msg-eu{align-self:flex-end;background:var(--g1);color:#fff;border-bottom-right-radius:4px;}
+.msg-autor{font-size:.68rem;font-weight:800;opacity:.65;margin-bottom:.2rem;display:block;}
+.chat-input-linha{display:flex;gap:.6rem;padding:.9rem;border-top:1px solid var(--border);}
+.chat-input-linha input{flex:1;border:1px solid var(--border);background:var(--off);border-radius:100px;padding:.65rem 1.1rem;font-family:inherit;font-size:.85rem;color:var(--b1);}
+.chat-input-linha button{border:none;background:var(--g1);color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;flex-shrink:0;}
+.chat-vazio{flex:1;display:flex;align-items:center;justify-content:center;color:var(--b3);font-size:.85rem;text-align:center;padding:2rem;}
+
+.busca-pessoa-resultado{border:1px solid var(--border);border-radius:10px;padding:.5rem .7rem;display:flex;align-items:center;justify-content:space-between;margin-top:.4rem;font-size:.82rem;}
+.busca-pessoa-resultado button{border:none;background:var(--g1);color:#fff;font-size:.72rem;font-weight:800;padding:.3rem .7rem;border-radius:100px;cursor:pointer;}
+
+/* Modal leve (nova conversa / criar grupo) */
+.area-modal-backdrop{display:none;position:fixed;inset:0;background:rgba(21,43,85,.5);z-index:300;align-items:center;justify-content:center;padding:1.2rem;}
+.area-modal-backdrop.aberto{display:flex;}
+.area-modal-box{background:#fff;border-radius:18px;padding:1.6rem;max-width:420px;width:100%;max-height:85vh;overflow-y:auto;position:relative;}
+.area-modal-box h3{font-size:1.05rem;color:var(--b1);margin-bottom:1rem;}
+.area-modal-close{position:absolute;top:1rem;right:1rem;border:none;background:none;color:var(--b3);cursor:pointer;}
+.chip-selecionado{display:inline-flex;align-items:center;gap:.4rem;background:var(--g4);color:var(--g2);font-size:.75rem;font-weight:800;padding:.25rem .6rem;border-radius:100px;margin:.2rem .3rem .2rem 0;}
+.chip-selecionado button{border:none;background:none;color:var(--g2);cursor:pointer;font-size:.7rem;}
+
+@media (max-width:720px){
+  .chat-shell{height:calc(100vh - 220px);}
+  .chat-lista{position:absolute;inset:0;width:100%;z-index:2;background:#fff;}
+  .chat-shell.conversa-aberta .chat-lista{display:none;}
+  .chat-shell:not(.conversa-aberta) .chat-painel{display:none;}
+  .chat-voltar{display:inline-block;}
+  .chat-shell{position:relative;}
+}

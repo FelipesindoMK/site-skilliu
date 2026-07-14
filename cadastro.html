@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar conta — Skilliu</title>
+<link rel="icon" type="image/png" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="area.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="pagina-auth">
+
+<a href="index.html" class="auth-logo-link">
+  <div class="logo-name"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></div>
+</a>
+
+<div class="auth-shell">
+  <div class="lead-form" style="max-width:520px;width:100%;">
+    <span class="s-tag">Comunidade Skilliu</span>
+    <h2 class="s-title" style="font-size:1.7rem;">Criar sua conta</h2>
+    <p class="s-text" style="margin-bottom:1.4rem;">Pra baixar ebooks e entrar na comunidade de Skillers.</p>
+
+    <div class="form-erro-global" id="cadastroErro" style="display:none;"></div>
+
+    <form id="formCadastro">
+      <div class="f-group" style="margin-bottom:1rem;"><label>Nome completo</label><input type="text" id="c-nome" required></div>
+      <div class="f-row">
+        <div class="f-group"><label>E-mail</label><input type="email" id="c-email" required></div>
+        <div class="f-group"><label>Você é</label>
+          <select id="c-cargo">
+            <option>Professor(a)</option><option>Coordenador(a)</option><option>Diretor(a)</option><option>Gestor Municipal</option><option>Outro</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label>Senha</label><input type="password" id="c-senha" minlength="8" required></div>
+        <div class="f-group"><label>Confirmar senha</label><input type="password" id="c-senha2" minlength="8" required></div>
+      </div>
+      <div class="f-group" style="margin-bottom:1rem;"><label>Escola / Instituição</label><input type="text" id="c-escola"></div>
+      <div class="f-row">
+        <div class="f-group"><label>Cidade</label><input type="text" id="c-cidade"></div>
+        <div class="f-group"><label>Estado</label>
+          <select id="c-uf">
+            <option value="">Selecione</option>
+            <option value="AC">Acre (AC)</option><option value="AL">Alagoas (AL)</option><option value="AP">Amapá (AP)</option><option value="AM">Amazonas (AM)</option><option value="BA">Bahia (BA)</option><option value="CE">Ceará (CE)</option><option value="DF">Distrito Federal (DF)</option><option value="ES">Espírito Santo (ES)</option><option value="GO">Goiás (GO)</option><option value="MA">Maranhão (MA)</option><option value="MT">Mato Grosso (MT)</option><option value="MS">Mato Grosso do Sul (MS)</option><option value="MG">Minas Gerais (MG)</option><option value="PA">Pará (PA)</option><option value="PB">Paraíba (PB)</option><option value="PR">Paraná (PR)</option><option value="PE">Pernambuco (PE)</option><option value="PI">Piauí (PI)</option><option value="RJ">Rio de Janeiro (RJ)</option><option value="RN">Rio Grande do Norte (RN)</option><option value="RS">Rio Grande do Sul (RS)</option><option value="RO">Rondônia (RO)</option><option value="RR">Roraima (RR)</option><option value="SC">Santa Catarina (SC)</option><option value="SP">São Paulo (SP)</option><option value="SE">Sergipe (SE)</option><option value="TO">Tocantins (TO)</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn-submit" id="btnCadastro">Criar conta</button>
+    </form>
+    <p style="text-align:center;font-size:.85rem;margin-top:1.2rem;">Já tem conta? <a href="entrar.html" class="link-privacidade">Entrar</a></p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script src="cadastro.js"></script>
+</body>
+</html>

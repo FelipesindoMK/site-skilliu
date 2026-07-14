@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca — Skilliu</title>
+<link rel="icon" type="image/png" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="biblioteca.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="bib-topo">
+  <a href="index.html" class="logo" style="text-decoration:none;">
+    <div class="logo-name"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></div>
+    <div class="logo-sub">Steam Education</div>
+  </a>
+  <a href="entrar.html" id="linkContaBiblioteca" class="bib-conta-link">Entrar</a>
+</header>
+
+<div class="bib-hero reveal on">
+  <span class="s-tag">Biblioteca Skilliu</span>
+  <h1 class="s-title">Ebooks e materiais <em>pra levar pra sala</em></h1>
+  <p class="s-text">Um acervo pensado pra resolver problema real de sala de aula — do jeito prático, sem enrolação. Alguns materiais são gratuitos, outros fazem parte do catálogo pago da Skilliu.</p>
+</div>
+
+<div class="bib-grid" id="bibGrid"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script src="biblioteca-dados.js"></script>
+<script src="biblioteca.js"></script>
+</body>
+</html>

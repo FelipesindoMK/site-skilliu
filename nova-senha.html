@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova senha — Skilliu</title>
+<link rel="icon" type="image/png" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="area.css">
+</head>
+<body class="pagina-auth">
+
+<a href="index.html" class="auth-logo-link">
+  <div class="logo-name"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></div>
+</a>
+
+<div class="auth-shell">
+  <div class="lead-form" style="max-width:420px;width:100%;">
+    <span class="s-tag">Comunidade Skilliu</span>
+    <h2 class="s-title" style="font-size:1.7rem;">Nova senha</h2>
+    <p class="s-text" style="margin-bottom:1.4rem;">Escolha uma nova senha de acesso.</p>
+    <div class="form-erro-global" id="npErro" style="display:none;"></div>
+    <form id="formNovaSenha">
+      <div class="f-group" style="margin-bottom:1rem;"><label>Nova senha</label><input type="password" id="np-senha" minlength="8" required></div>
+      <button type="submit" class="btn-submit" id="npBtn">Salvar nova senha</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script>
+const erroBox = document.getElementById('npErro');
+document.getElementById('formNovaSenha').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const senha = document.getElementById('np-senha').value;
+  if (senha.length < 8) { erroBox.textContent = 'Mínimo de 8 caracteres.'; erroBox.style.display = 'block'; return; }
+  const btn = document.getElementById('npBtn');
+  btn.disabled = true; btn.textContent = 'Salvando...';
+  const { error } = await sb.auth.updateUser({ password: senha });
+  btn.disabled = false; btn.textContent = 'Salvar nova senha';
+  if (error) { erroBox.textContent = 'Não deu pra salvar: ' + error.message; erroBox.style.display = 'block'; return; }
+  alert('Senha atualizada! Faça login de novo.');
+  await sb.auth.signOut();
+  window.location.href = 'entrar.html';
+});
+</script>
+</body>
+</html>

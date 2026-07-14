@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha área — Skilliu</title>
+<link rel="icon" type="image/png" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="area.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="pagina-area area-auth-pendente">
+
+<div class="area-loading" id="areaLoading"><i class="fa-solid fa-spinner fa-spin fa-lg"></i></div>
+
+<div class="area-shell">
+  <header class="area-topbar">
+    <a href="index.html" class="logo" style="text-decoration:none;">
+      <div class="logo-name" style="font-size:1.2rem;"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></div>
+    </a>
+    <div class="area-user">
+      <div class="area-avatar" id="areaAvatar">?</div>
+      <span id="areaSaudacao" style="font-size:.88rem;font-weight:700;color:var(--b1);">Olá</span>
+      <button class="area-sair" id="btnSair">Sair</button>
+    </div>
+  </header>
+
+  <div class="area-container">
+    <div class="area-tabs">
+      <button class="area-tab active" data-tab="perfil">Perfil</button>
+      <button class="area-tab" data-tab="comunidade">Comunidade</button>
+    </div>
+    <div id="areaConteudo"></div>
+  </div>
+</div>
+
+<div class="area-modal-backdrop" id="areaModalBackdrop">
+  <div class="area-modal-box" id="areaModalBox"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script src="area.js"></script>
+</body>
+</html>

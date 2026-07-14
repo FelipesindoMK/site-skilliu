@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirme seu e-mail — Skilliu</title>
+<link rel="icon" type="image/png" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="area.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="pagina-auth">
+
+<a href="index.html" class="auth-logo-link">
+  <div class="logo-name"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></div>
+</a>
+
+<div class="auth-shell">
+  <div class="lead-form" style="max-width:460px;width:100%;text-align:center;">
+    <div style="width:64px;height:64px;border-radius:50%;background:rgba(50,165,87,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;">
+      <i class="fa-solid fa-envelope-open-text" style="font-size:1.6rem;color:var(--g1);"></i>
+    </div>
+    <h2 class="s-title" style="font-size:1.5rem;">Confirme seu e-mail</h2>
+    <p class="s-text" id="txtConfirmacao">Mandamos um link de confirmação pro seu e-mail. Clique nele pra ativar sua conta e poder entrar.</p>
+    <button class="btn-submit" id="btnReenviar" style="margin-top:1rem;">Reenviar e-mail</button>
+    <p style="text-align:center;font-size:.85rem;margin-top:1.2rem;"><a href="entrar.html" class="link-privacidade">Já confirmei, quero entrar</a></p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const email = params.get('email') || '';
+if (email) document.getElementById('txtConfirmacao').textContent = `Mandamos um link de confirmação pra ${email}. Clique nele pra ativar sua conta e poder entrar.`;
+document.getElementById('btnReenviar').addEventListener('click', async () => {
+  if (!email) { alert('Volta na tela de cadastro ou de login e tenta de novo por lá.'); return; }
+  const { error } = await sb.auth.resend({ type: 'signup', email });
+  alert(error ? 'Não deu pra reenviar: ' + error.message : 'E-mail reenviado!');
+});
+</script>
+</body>
+</html>

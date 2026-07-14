@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar — Skilliu</title>
+<link rel="icon" type="image/png" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="area.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="pagina-auth">
+
+<a href="index.html" class="auth-logo-link">
+  <div class="logo-name"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></div>
+</a>
+
+<div class="auth-shell">
+  <div class="lead-form" style="max-width:420px;width:100%;">
+    <span class="s-tag">Comunidade Skilliu</span>
+    <h2 class="s-title" style="font-size:1.7rem;">Entrar</h2>
+    <p class="s-text" style="margin-bottom:1.4rem;">Acesse sua conta pra ver os ebooks e a comunidade.</p>
+
+    <div class="form-erro-global" id="loginErro" style="display:none;"></div>
+    <div class="form-erro-global" id="loginReenviar" style="display:none;background:rgba(50,165,87,.08);color:var(--g2);"></div>
+
+    <form id="formEntrar">
+      <div class="f-group" style="margin-bottom:1rem;"><label>E-mail</label><input type="email" id="e-email" required></div>
+      <div class="f-group" style="margin-bottom:1rem;"><label>Senha</label><input type="password" id="e-senha" required></div>
+      <button type="submit" class="btn-submit" id="btnEntrar">Entrar</button>
+    </form>
+    <p style="text-align:center;font-size:.85rem;margin-top:1rem;"><a href="#" id="linkEsqueci" class="link-privacidade">Esqueci minha senha</a></p>
+    <p style="text-align:center;font-size:.85rem;margin-top:.4rem;">Ainda não tem conta? <a href="cadastro.html" class="link-privacidade">Criar conta</a></p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script src="entrar.js"></script>
+</body>
+</html>
